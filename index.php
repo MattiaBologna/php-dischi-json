@@ -16,10 +16,32 @@
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     
     <div id="app">
+
+        <header class="bg-success p-3">
+
+            <div class="logo">LOGO</div>
+
+        </header>
         
-        <p v-for="disk in disks">
-                {{disk['title']}}
-        </p>
+        <main>
+            <section>
+                <div class="container">
+                    <div class="row">
+                        <div v-for="disk in disks" class="col-4">
+                            <div  class="card m-2" style="width: 20rem;">
+                                <img :src="disk.poster" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{disk.author}}</h5>
+                                    <p class="card-text">{{disk.title}}</p>
+                                    <p class="card-text">{{disk.year}}</p>
+                                    <p class="card-text">{{disk.genre}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
 
     </div>
     
