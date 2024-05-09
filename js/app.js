@@ -3,7 +3,8 @@ const { createApp } = Vue
 createApp({
     data() {
         return {
-            disks: []
+            disks: [],
+            modal_on: false
         }
     },
     methods: {
