@@ -17,7 +17,9 @@
     
     <div id="app">
         
-        <p v-for="disk in disks">ciao</p>
+        <p v-for="disk in disks">
+                {{disk['title']}}
+        </p>
 
     </div>
     

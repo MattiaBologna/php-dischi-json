@@ -10,11 +10,8 @@ createApp({
         fetchData() {
             // axios recuperiamo i dati 
             axios.get('./server.php').then((res) => {
-                console.log(res)
                 this.disks = res.data
-            }).catch((error) => {
-                console.error('Error fetching data:', error);
-            });
+            })
         }
     },
     created() {
