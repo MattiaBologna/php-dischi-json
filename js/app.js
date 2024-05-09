@@ -4,7 +4,8 @@ createApp({
     data() {
         return {
             disks: [],
-            modal_on: false
+            modalIsOn: false,
+            currentDisk: {}
         }
     },
     methods: {
@@ -13,9 +14,21 @@ createApp({
             axios.get('./server.php').then((res) => {
                 this.disks = res.data
             })
+        },
+        testFunction(i) {
+            if (this.modalIsOn) {
+                this.modalIsOn = false;
+            } else {
+                this.modalIsOn = true;
+            }
+            console.log(this.modalIsOn);
+            console.log(i);
+            console.log(this.disks[i].title);
+
+            this.currentDisk = this.disks[i];
         }
     },
     created() {
-        this.fetchData()
+        this.fetchData();
     }
 }).mount('#app')
